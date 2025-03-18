@@ -54,7 +54,7 @@ def download_file_from_drive(file_id, output):
     url = f"https://drive.google.com/uc?id={file_id}"
     gdown.download(url, output, quiet=False)
 
-    
+
 # Download files if not present
 if not os.path.exists("movies.pkl"):
     download_file_from_drive(MOVIES_FILE_ID, "movies.pkl")
@@ -97,3 +97,5 @@ if st.button("Recommend"):
     recommendations = recommend(select_movie_name)
     for i in recommendations:
         st.write(i)
+
+
